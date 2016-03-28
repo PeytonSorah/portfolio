@@ -32,9 +32,6 @@ the whole project.
 // typography
 @import "partials/typography";
 
-// Sass functions
-@import "partials/functions";
-
 // import mixins
 @import "partials/mixins";
 
@@ -61,13 +58,6 @@ $susy: (
 $wrapper-width: 1200px;
 
 
-
-/*********************
-BASE (MOBILE) SIZE
-This are the mobile styles. It's what people see on their phones. If
-you set a great foundation, you won't need to add too many styles in
-the other stylesheets. Remember, keep it light: Speed is Important.
-*********************/
 
 // styles in base.scss
 @import "breakpoints/base";

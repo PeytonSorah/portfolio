@@ -1,29 +1,29 @@
-/******************************************************************
-Site Name:
-Author:
-
-Stylesheet: Base Mobile Stylesheet
-
-Be light and don't over style since everything here will be
-loaded by mobile devices. You want to keep it as minimal as
-possible. This is called at the top of the main stylsheet
-and will be used across all viewports.
-
-******************************************************************/
 
 /*********************
 GENERAL STYLES
 *********************/
 
+html,body {
+    height:100%;
+}
+
 body {
-	font-family: $lato;
+	font-family: $serif;
 	font-size: 100%;
 	line-height: 1.5;
 	color: $text-color;
-	background-color: $gray;
+	background-color: $cream;
   	-webkit-font-smoothing: antialiased;
   	-moz-osx-font-smoothing: grayscale;
+  @include container($wrapper-width);
 }
+
+.inner-content, .inner-footer, .inner-header {
+  @include container($wrapper-width);
+  @include clearfix;
+  transition: padding 0.2s linear;
+}
+
 
 
 /*********************
@@ -73,8 +73,11 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 }
 
 h1, .h1 {
-	font-size: 2.5em;
+	font-size: 1.25em;
 	line-height: 1.333em;
+	font-family: $sans-serif;
+	letter-spacing: 2px;
+	font-weight: 700;
 }
 
 h2, .h2 {
@@ -103,52 +106,65 @@ h5, .h5 {
 HEADER STYLES
 *********************/
 
-.header {
-	background-color: $cream;
-}
+
 #inner-header{
-	@include container;
+	@include span(full);
+  @include clearfix;
+	margin: 50px 0;
+	padding: 50px;
+  box-sizing: border-box;
+	border-top: 1px solid $pink;
+	border-bottom: 1px solid $pink;
+  display: flex;
+}
 
 	.social{
 		@include span(first 3 of 12);
-		margin: 0.75em 0;
+    position: relative;
+    i{
+      margin: 0 5px 0 0;
+    }
 	}
-	#logo {
-		margin: 0.75em 0;
-	  @include span(6 of 12);
-	  text-align: center;
-
+	.logo {
+		@include span(6 of 12);
+		position: relative;
+		text-align: center;
+    align-self: center;  
 		a {
 			color: $black;
+			text-transform: uppercase;
+      text-decoration: none;
 		}
 	}
 
 /*********************
 NAVIGATION STYLES
 *********************/
-
-/*
-all navs have a .nav class applied via
-the wp_menu function; this is so we can
-easily write one group of styles for
-the navs on the site so our css is cleaner
-and more scalable.
-*/
-
+.header-nav{
+  @include span(last 3 of 12);
+  padding-left:25px;
+  margin: 0;
+  padding: 0;
 	.nav {
-		border-bottom: 0;
-		margin: 0;
-		@include span(last 3 of 12);
+    list-style: none;
+    text-align: right;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
 
 		li {
+      border-bottom: 1px solid $pink;
 
+			&:first-child {
+			  border-top: 1px solid $pink;
+			}
 			a {
-				display: block;
+				display: inline-block;
 				color: $black;
 				text-decoration: none;
 				padding: 0.75em;
-				width: 100%;
-				text-align: right;
+        width: 100%;
 
 				/*
 				remember this is for mobile ONLY, so there's no need
@@ -157,7 +173,7 @@ and more scalable.
 				keep this file as small as possible!
 				*/
 				&:hover, &:focus {
-
+          color: $pink;
 				}
 			}
 
@@ -178,7 +194,6 @@ and more scalable.
 				li {
 
 					a {
-						padding-left: 30px;
 
 						&:hover,
 						&:focus {}
@@ -208,6 +223,7 @@ and more scalable.
 
 	} /* end .nav */
 }
+
 
 
 /******************************************************************
@@ -291,28 +307,24 @@ FOOTER STYLES
 
 .footer {
 	clear: both;
-	background-color: $black;
-	color: $light-gray;
+	color: $black;
+  margin: 50px 0;
+  padding: 50px;
+  box-sizing: border-box;
+  border-top: 1px solid $pink;
+  border-bottom: 1px solid $pink;
+  display: flex;
+  .left-foot{
+    @include span (first 4 of 12);
+    .copyright{
+      width: 100%;
+      font-style: italic;
+      text-align: left;
+      color: $black;
+    }
+    p{
+      width: 100%;
+      text-align: left;
+    }
+  }
 }
-
-	/*
-	if you checked out the link above:
-	http://www.alistapart.com/articles/organizing-mobile/
-	you'll want to style the footer nav
-	a bit more in-depth. Remember to keep
-	it simple because you'll have to
-	override these styles for the desktop
-	view.
-	*/
-	.footer-links {
-
-		ul {
-
-			li {}
-
-		}
-
-	} /* end .footer-links */
-
-
-	.copyright {}
