@@ -30,19 +30,17 @@
 									   <?php
 											  if ( have_rows( 'slider' ) ) : ?>
 
-											  <div class="slider slider-wrap slide-fade" data-autoplay="true" data-slidespeed="7500" data-slidedots="true">
-											  <div class="slider-list">
+											  <div class="slider-wrap">
 
 											    <?php while ( have_rows( 'slider' ) ) : the_row();
 											      $image = get_sub_field( 'image' );
 											      $caption = get_sub_field( 'caption' ); ?>
 
-														<div class="slide" style="background-image:url('<?php echo esc_url( $image['sizes']['hero-image'] ); ?>');">
+														<div class="slide" style="background-image:url('<?php echo $image[url]; ?>');">
 											      </div>
 
 											    <?php endwhile; ?>
 
-											  </div>
 											  </div>
 
 											 <?php endif; ?>

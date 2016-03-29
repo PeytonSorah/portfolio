@@ -533,6 +533,13 @@ p {
   .clearfix:after, .cf:after {
     clear: both; }
 
+.slider-wrap .slide {
+  width: 100%;
+  height: 500px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center; }
+
 /*********************
 GENERAL STYLES
 *********************/
@@ -541,7 +548,7 @@ html, body {
 
 body {
   font-family: "Georgia", Cambria, Times New Roman, Times, serif;
-  font-size: 100%;
+  font-size: 16px;
   line-height: 1.5;
   color: #414042;
   background-color: #fff3e4;
@@ -570,6 +577,9 @@ body {
     display: table; }
   .inner-content:after, .inner-footer:after, .inner-header:after {
     clear: both; }
+
+#content {
+  clear: both; }
 
 /*********************
 LINK STYLES
@@ -604,19 +614,19 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
     text-decoration: none; }
 
 h1, .h1 {
-  font-size: 1.25em;
+  font-size: 1.3em;
   line-height: 1.333em;
   font-family: Futura, "Trebuchet MS", Arial, sans-serif;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
   font-weight: 700; }
 
 h2, .h2 {
-  font-size: 1.75em;
+  font-size: 1.2em;
   line-height: 1.4em;
   margin-bottom: 0.375em; }
 
 h3, .h3 {
-  font-size: 1.125em; }
+  font-size: 1.1em; }
 
 h4, .h4 {
   font-size: 1.1em;
@@ -642,7 +652,8 @@ HEADER STYLES
   box-sizing: border-box;
   border-top: 1px solid #fbdebe;
   border-bottom: 1px solid #fbdebe;
-  display: flex; }
+  display: flex;
+  clear: both; }
   #inner-header:before, #inner-header:after {
     content: "";
     display: table; }

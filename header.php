@@ -50,9 +50,10 @@
 				<div id="inner-header" class="wrap cf">
 
           <div class="social">
-            <a href="#"><i class="fa fa-dribbble"></i></a>
-            <a href="#"><i class="fa fa-github"></i></a>
-            <a href="#"><i class="fa fa-pinterest-p"></i></a>
+            <a href="https://dribbble.com/peytonsorah"><i class="fa fa-dribbble"></i></a>
+            <a href="https://github.com/PeytonSorah"><i class="fa fa-github"></i></a>
+            <a href="https://www.pinterest.com/peytonsorah/"><i class="fa fa-pinterest-p"></i></a>
+            <a href="https://www.instagram.com/peytonsorah/"><i class="fa fa-instagram"></i></a>
           </div>
 
           <div class="logo" itemscope itemtype="http://schema.org/Organization">

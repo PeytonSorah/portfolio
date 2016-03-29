@@ -9,7 +9,7 @@ html,body {
 
 body {
 	font-family: $serif;
-	font-size: 100%;
+	font-size: 16px;
 	line-height: 1.5;
 	color: $text-color;
 	background-color: $cream;
@@ -22,6 +22,9 @@ body {
   @include container($wrapper-width);
   @include clearfix;
   transition: padding 0.2s linear;
+}
+#content{
+  clear:both;
 }
 
 
@@ -73,21 +76,21 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 }
 
 h1, .h1 {
-	font-size: 1.25em;
+	font-size: 1.3em;
 	line-height: 1.333em;
 	font-family: $sans-serif;
-	letter-spacing: 2px;
+	letter-spacing: 3px;
 	font-weight: 700;
 }
 
 h2, .h2 {
-	font-size: 1.75em;
+	font-size: 1.2em;
 	line-height: 1.4em;
 	margin-bottom: 0.375em;
 }
 
 h3, .h3 {
-	font-size: 1.125em;
+	font-size: 1.1em;
 }
 
 h4, .h4 {
@@ -116,6 +119,7 @@ HEADER STYLES
 	border-top: 1px solid $pink;
 	border-bottom: 1px solid $pink;
   display: flex;
+  clear: both;
 }
 
 	.social{
