@@ -64,6 +64,7 @@ H1, H2, H3, H4, H5 STYLES
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 	text-rendering: optimizelegibility;
 	font-weight: 500;
+  transition: color 0.5s ease-in-out;
 	/*
 	if you're going to use webfonts, be sure to check your weights
 	http://css-tricks.com/watch-your-font-weight/
@@ -72,6 +73,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 	/* removing text decoration from all headline links */
 	a {
 		text-decoration: none;
+    transition: color 0.5s ease-in-out;
 	}
 }
 
@@ -120,19 +122,55 @@ HEADER STYLES
 	@include span(full);
   @include clearfix;
 	margin: 50px 0;
-	padding: 50px 50px 0;
+	padding: 50px 0;
   box-sizing: border-box;
 	border-top: 1px solid $pink;
-	// border-bottom: 1px solid $pink;
+	border-bottom: 1px solid $pink;
   display: flex;
   clear: both;
 }
 
-	.social{
+	.social-nav{
 		@include span(first 3 of 12);
     position: relative;
-    i{
-      margin: 0 5px 0 0;
+    margin: 0;
+    padding: 0;
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      position: relative;
+
+      li {
+        border-bottom: 1px solid $pink;
+        width: 70%;
+        text-align: left;
+        float: left;
+
+        &:first-child {
+          border-top: 1px solid $pink;
+        }
+        a {
+          display: inline-block;
+          color: $black;
+          text-decoration: none;
+          padding: 0.45em;
+          width: 100%;
+          font-style: italic;
+          transition: color 0.5s ease-in-out;
+
+          /*
+          remember this is for mobile ONLY, so there's no need
+          to even declare hover styles here, you can do it in
+          the style.scss file where it's relevant. We want to
+          keep this file as small as possible!
+          */
+          &:hover, &:focus {
+            color: $pink;
+          }
+        }
+      }
     }
 	}
 	.logo {
@@ -177,6 +215,7 @@ NAVIGATION STYLES
 				padding: 0.45em;
         width: 100%;
         font-style: italic;
+        transition: color 0.5s ease-in-out;
 
 				/*
 				remember this is for mobile ONLY, so there's no need

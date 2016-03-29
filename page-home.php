@@ -67,17 +67,17 @@
 							            <p><?php the_excerpt(); ?></p>
 							          </section>
 						          </a>
-						           <div class="squarephoto-featured" style="background-image: url(http://i2.cdn.turner.com/cnnnext/dam/assets/150324154010-04-internet-cats-restricted-super-169.jpg);"></div>
+						           <div class="block-link" style="background-image: url(http://i2.cdn.turner.com/cnnnext/dam/assets/150324154010-04-internet-cats-restricted-super-169.jpg);">
+												 <a href="<?php echo esc_url( home_url() ); ?>/portfolio">
+									        	see more work
+									       </a>
+						           </div>
 						        </div>
 
 						        <?php endwhile; ?>
 						        <?php else : ?>
 						        <?php get_template_part( 'library/post-not-found' ); ?>
 						        <?php endif; ?>
-
-						        <a href="<?php echo esc_url( home_url() ); ?>/portfolio">
-						        	see more work
-						        </a>
 
 						    </div>
 						  </section>

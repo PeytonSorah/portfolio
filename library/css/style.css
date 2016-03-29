@@ -598,13 +598,15 @@ H1, H2, H3, H4, H5 STYLES
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
   text-rendering: optimizelegibility;
   font-weight: 500;
+  transition: color 0.5s ease-in-out;
   /*
 	if you're going to use webfonts, be sure to check your weights
 	http://css-tricks.com/watch-your-font-weight/
 	*/
   /* removing text decoration from all headline links */ }
   h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a {
-    text-decoration: none; }
+    text-decoration: none;
+    transition: color 0.5s ease-in-out; }
 
 h1, .h1 {
   font-size: 1.3em;
@@ -646,9 +648,10 @@ HEADER STYLES
   margin-right: 0;
   zoom: 1;
   margin: 50px 0;
-  padding: 50px 50px 0;
+  padding: 50px 0;
   box-sizing: border-box;
   border-top: 1px solid #fbdebe;
+  border-bottom: 1px solid #fbdebe;
   display: flex;
   clear: both; }
   #inner-header:before, #inner-header:after {
@@ -657,12 +660,41 @@ HEADER STYLES
   #inner-header:after {
     clear: both; }
 
-.social {
+.social-nav {
   width: 25%;
   float: left;
-  position: relative; }
-  .social i {
-    margin: 0 5px 0 0; }
+  position: relative;
+  margin: 0;
+  padding: 0; }
+  .social-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative; }
+    .social-nav ul li {
+      border-bottom: 1px solid #fbdebe;
+      width: 70%;
+      text-align: left;
+      float: left; }
+      .social-nav ul li:first-child {
+        border-top: 1px solid #fbdebe; }
+      .social-nav ul li a {
+        display: inline-block;
+        color: #414042;
+        text-decoration: none;
+        padding: 0.45em;
+        width: 100%;
+        font-style: italic;
+        transition: color 0.5s ease-in-out;
+        /*
+          remember this is for mobile ONLY, so there's no need
+          to even declare hover styles here, you can do it in
+          the style.scss file where it's relevant. We want to
+          keep this file as small as possible!
+          */ }
+        .social-nav ul li a:hover, .social-nav ul li a:focus {
+          color: #fbdebe; }
 
 .logo {
   width: 50%;
@@ -715,6 +747,7 @@ NAVIGATION STYLES
         padding: 0.45em;
         width: 100%;
         font-style: italic;
+        transition: color 0.5s ease-in-out;
         /*
 				remember this is for mobile ONLY, so there's no need
 				to even declare hover styles here, you can do it in
@@ -802,7 +835,7 @@ FOOTER STYLES
       text-align: left; }
 
 .slider-wrap {
-  margin-bottom: 50px;
+  margin-bottom: 60px;
   position: relative; }
   .slider-wrap .slide {
     width: 100%;
@@ -834,12 +867,12 @@ FOOTER STYLES
     position: relative; }
     .home-news-item:first-child .home-news-item-text .white-ribbon {
       position: absolute;
-      background-color: #fff;
+      background-color: #fff3e4;
       width: 160px;
-      padding: 15px 0;
+      line-height: 50px;
       display: block;
-      top: 50px;
-      left: -75px;
+      top: 75px;
+      left: -80px;
       text-align: center; }
   .home-news-item:first-child .squarephoto {
     width: 33.3333333333%;
@@ -848,14 +881,18 @@ FOOTER STYLES
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat; }
-  .home-news-item:first-child .squarephoto-featured {
+  .home-news-item:first-child .block-link {
     width: 33.3333333333%;
     float: right;
     margin-right: 0;
     height: 400px;
     background-size: cover;
     background-position: center center;
-    background-repeat: no-repeat; }
+    background-repeat: no-repeat;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
 
 .home-news-item:nth-child(2) {
   width: 100%;
@@ -868,19 +905,20 @@ FOOTER STYLES
     float: left;
     height: 400px;
     color: #414042;
-    padding: 200px 50px 25px 50px;
+    padding: 150px 50px 25px 50px;
     box-sizing: border-box;
     position: relative;
-    background-color: #fff; }
+    background-color: #fff;
+    transition: background-color 0.5s ease-in-out; }
     .home-news-item:nth-child(2) .home-news-item-text .white-ribbon {
-      position: absolute;
-      background-color: #fbdebe;
-      width: 160px;
+      position: relative;
+      background-color: none;
+      width: auto;
       padding: 15px 0;
       display: block;
-      top: 50px;
-      right: -75px;
-      text-align: center; }
+      text-align: left; }
+  .home-news-item:nth-child(2):hover .home-news-item-text {
+    background-color: #fce9d6; }
   .home-news-item:nth-child(2) .squarephoto {
     width: 66.6666666667%;
     float: right;
@@ -889,5 +927,5 @@ FOOTER STYLES
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat; }
-  .home-news-item:nth-child(2) .squarephoto-featured {
+  .home-news-item:nth-child(2) .block-link {
     display: none; }

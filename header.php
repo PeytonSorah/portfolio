@@ -49,11 +49,13 @@
 
 				<div id="inner-header" class="wrap cf">
 
-          <div class="social">
-            <a href="https://dribbble.com/peytonsorah"><i class="fa fa-dribbble"></i></a>
-            <a href="https://github.com/PeytonSorah"><i class="fa fa-github"></i></a>
-            <a href="https://www.pinterest.com/peytonsorah/"><i class="fa fa-pinterest-p"></i></a>
-            <a href="https://www.instagram.com/peytonsorah/"><i class="fa fa-instagram"></i></a>
+          <div class="social-nav">
+            <ul>
+              <li><a href="https://dribbble.com/peytonsorah">Dribbble</a></li>
+              <li><a href="https://github.com/PeytonSorah">Github</i></a></li>
+              <li><a href="https://www.pinterest.com/peytonsorah/">Pinterest</i></a></li>
+              <li><a href="https://www.instagram.com/peytonsorah/">Instagram</i></a></li>
+             </ul>
           </div>
 
           <div class="logo" itemscope itemtype="http://schema.org/Organization">

@@ -12,12 +12,12 @@
       position: relative;
       .white-ribbon{
         position: absolute;
-        background-color: $white;
+        background-color: $cream;
         width: 160px;
-        padding: 15px 0;
+        line-height: 50px;
         display: block;
-        top: 50px;
-        left: -75px;
+        top: 75px;
+        left: -80px;
         text-align: center;
       }
     }
@@ -28,12 +28,16 @@
       background-position: center center;
       background-repeat: no-repeat;
     }
-    .squarephoto-featured{
+    .block-link{
       @include span(last 4 of 12);
       height: 400px;
       background-size: cover;
       background-position: center center;
       background-repeat: no-repeat;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   }
   &:nth-child(2){
@@ -43,19 +47,23 @@
       @include span(first 4 of 12);
       height: 400px;
       color: $black;
-      padding: 200px $full-space $half-space $full-space;
+      padding: 150px $full-space $half-space $full-space;
       box-sizing: border-box;
       position: relative;
       background-color: $white;
+      transition: background-color 0.5s ease-in-out;
       .white-ribbon{
-        position: absolute;
-        background-color: $pink;
-        width: 160px;
+        position: relative;
+        background-color: none;
+        width: auto;
         padding: 15px 0;
         display: block;
-        top: 50px;
-        right: -75px;
-        text-align: center;
+        text-align: left;
+      }
+    }
+    &:hover{
+      .home-news-item-text{
+        background-color: $light-pink;
       }
     }
     .squarephoto{
@@ -65,8 +73,8 @@
       background-position: center center;
       background-repeat: no-repeat;
     }
-    .squarephoto-featured{
-      display:none;
+    .block-link{
+      display: none;
     }
   }
 }
