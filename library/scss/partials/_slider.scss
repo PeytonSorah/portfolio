@@ -1,5 +1,5 @@
 .slider-wrap{
-  margin-bottom: 60px;
+  margin-bottom: 0;
   position: relative;
  .slide{
    width:100%;
@@ -8,6 +8,8 @@
    background-size: cover;
    background-position: center center;
    position: relative;
+   border: 1px solid $black;
+   border-bottom: none;
    .caption{
     position: absolute;
     top: 505px;

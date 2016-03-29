@@ -6,19 +6,15 @@
       @include span(4 of 12);
       height: 400px;
       color: $black;
-      background-color: $pink;
-      padding: 200px $full-space $half-space $full-space;
-      box-sizing: border-box;
+      background-color: $cream;
+      border: 1px solid $black;
+      border-left: none;
+      border-bottom: none;
+      padding: 125px $double-full-space $double-full-space $full-space;
       position: relative;
-      .white-ribbon{
-        position: absolute;
-        background-color: $cream;
-        width: 160px;
-        line-height: 50px;
-        display: block;
-        top: 75px;
-        left: -80px;
-        text-align: center;
+      transition: all 0.5s ease-in-out;
+      &:hover{
+          background-color: $pink;
       }
     }
     .squarephoto{
@@ -27,6 +23,10 @@
       background-size: cover;
       background-position: center center;
       background-repeat: no-repeat;
+      transition: all 0.5s ease-in-out;
+      border: 1px solid $black;
+      border-right: none;
+      border-bottom: none;
     }
     .block-link{
       @include span(last 4 of 12);
@@ -37,28 +37,48 @@
       text-align: center;
       display: flex;
       align-items: center;
+      background-color: $white;
+      border-right: 1px solid $black;
+      border-top: 1px solid $black;
       justify-content: center;
+      .block-link-interior{
+          width: 200px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: all 1s ease-in-out;
+          font-style: italic;
+          &:hover{
+            a{
+                color: $pink;
+            }
+          }
+          a {
+            color: $black;
+            padding: 15px 0;
+            width: 200px;
+            display: block;
+            text-decoration: none;
+          }
+      }
     }
   }
   &:nth-child(2){
     @include span(full);
     display: block;
+    border: 1px solid $black;
     .home-news-item-text{
       @include span(first 4 of 12);
       height: 400px;
       color: $black;
-      padding: 150px $full-space $half-space $full-space;
+      padding: 125px $double-full-space $double-full-space $full-space;
       box-sizing: border-box;
       position: relative;
       background-color: $white;
       transition: background-color 0.5s ease-in-out;
+
       .white-ribbon{
-        position: relative;
-        background-color: none;
-        width: auto;
-        padding: 15px 0;
-        display: block;
-        text-align: left;
+        display:none;
       }
     }
     &:hover{
@@ -72,6 +92,7 @@
       background-size: cover;
       background-position: center center;
       background-repeat: no-repeat;
+      transition: all 0.5s ease-in-out;
     }
     .block-link{
       display: none;

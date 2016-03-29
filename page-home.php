@@ -32,7 +32,7 @@
 											      $caption = get_sub_field( 'caption' ); ?>
 
 														<div class="slide" style="background-image:url('<?php echo $image[url]; ?>');">
-															<div class="caption"> <h3><?php echo $caption; ?></h3> </div>
+															<!-- <div class="caption"> <h3><?php echo $caption; ?></h3> </div> -->
 											      </div>
 
 											    <?php endwhile; ?>
@@ -62,15 +62,18 @@
 						          <a href="<?php the_permalink() ?>">
 							          <div class="squarephoto" style="background-image: url(<?php echo $src[0]; ?>)"></div>			            
 							          <section class="home-news-item-text">
-						          		<h2 class="white-ribbon"><?php echo get_the_date('m / d'); ?> </h2>
-							            <h3><?php echo get_the_title(); ?></h3>
+							          	<!-- <h2 class="white-ribbon">Latest Work</h2> -->
+						          		<h3 class="date"><?php echo get_the_date('m / d'); ?></h3>
+							            <h2><?php echo get_the_title(); ?></h2>
 							            <p><?php the_excerpt(); ?></p>
 							          </section>
 						          </a>
-						           <div class="block-link" style="background-image: url(http://i2.cdn.turner.com/cnnnext/dam/assets/150324154010-04-internet-cats-restricted-super-169.jpg);">
-												 <a href="<?php echo esc_url( home_url() ); ?>/portfolio">
-									        	see more work
-									       </a>
+						           <div class="block-link" style="background-image: url( )" >
+						           	<div class="block-link-interior">
+													 <a href="<?php echo esc_url( home_url() ); ?>/work">
+										        	view<br>full portfolio
+										       </a>
+										     </div>
 						           </div>
 						        </div>
 

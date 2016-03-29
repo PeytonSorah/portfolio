@@ -36,6 +36,7 @@ the whole project.
 @import "partials/mixins";
 
 
+
 @import "../../bower_components/susy/sass/susy";
 @import "../../bower_components/breakpoint-sass/stylesheets/breakpoint";
 
@@ -56,14 +57,13 @@ $susy: (
 
 $wrapper-width: 1200px;
 
-
-
-// styles in base.scss
 @import "breakpoints/base";
-
 
 @import "partials/slider";
 
-// typography
 @import "partials/home";
+
+@import "partials/flex";
+
+
 

@@ -578,12 +578,12 @@ body {
 LINK STYLES
 *********************/
 a, a:visited {
-  color: #fbdebe;
+  color: #f4b184;
   /* on hover */
   /* on click */
   /* mobile tap color */ }
   a:hover, a:focus, a:visited:hover, a:visited:focus {
-    color: #f8c893; }
+    color: #f0965a; }
   a:link, a:visited:link {
     /*
 		this highlights links on iPhones/iPads.
@@ -598,15 +598,15 @@ H1, H2, H3, H4, H5 STYLES
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
   text-rendering: optimizelegibility;
   font-weight: 500;
-  transition: color 0.5s ease-in-out;
   /*
 	if you're going to use webfonts, be sure to check your weights
 	http://css-tricks.com/watch-your-font-weight/
 	*/
   /* removing text decoration from all headline links */ }
-  h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a {
-    text-decoration: none;
-    transition: color 0.5s ease-in-out; }
+
+a {
+  text-decoration: none;
+  transition: color 0.5s ease-in-out; }
 
 h1, .h1 {
   font-size: 1.3em;
@@ -618,19 +618,21 @@ h1, .h1 {
 h2, .h2 {
   font-size: 1em;
   font-family: Futura, "Trebuchet MS", Arial, sans-serif;
-  letter-spacing: 3px;
-  font-weight: 700; }
-
-h3, .h3 {
-  font-size: 0.9em;
-  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
-  font-weight: 100;
-  letter-spacing: 3px;
+  letter-spacing: 1px;
+  font-weight: 700;
   text-transform: uppercase; }
 
+h3, .h3 {
+  font-size: 1em;
+  font-family: "Georgia", Cambria, Times New Roman, Times, serif;
+  font-weight: 100;
+  font-style: italic; }
+
 h4, .h4 {
-  font-size: 1.1em;
-  font-weight: 700; }
+  font-size: 1em;
+  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+  font-weight: 700;
+  text-transform: uppercase; }
 
 h5, .h5 {
   font-size: 0.846em;
@@ -648,10 +650,9 @@ HEADER STYLES
   margin-right: 0;
   zoom: 1;
   margin: 50px 0;
-  padding: 50px 0;
+  padding: 50px 0 0;
   box-sizing: border-box;
-  border-top: 1px solid #fbdebe;
-  border-bottom: 1px solid #fbdebe;
+  border-top: 1px solid #414042;
   display: flex;
   clear: both; }
   #inner-header:before, #inner-header:after {
@@ -673,12 +674,13 @@ HEADER STYLES
     box-sizing: border-box;
     position: relative; }
     .social-nav ul li {
-      border-bottom: 1px solid #fbdebe;
-      width: 70%;
+      border-bottom: 1px solid #414042;
+      width: 50%;
+      clear: both;
       text-align: left;
       float: left; }
       .social-nav ul li:first-child {
-        border-top: 1px solid #fbdebe; }
+        border-top: 1px solid #414042; }
       .social-nav ul li a {
         display: inline-block;
         color: #414042;
@@ -694,7 +696,7 @@ HEADER STYLES
           keep this file as small as possible!
           */ }
         .social-nav ul li a:hover, .social-nav ul li a:focus {
-          color: #fbdebe; }
+          color: #f4b184; }
 
 .logo {
   width: 50%;
@@ -727,8 +729,9 @@ NAVIGATION STYLES
     /* highlight current page */
     /* end current highlighters */ }
     .header-nav .nav li {
-      border-bottom: 1px solid #fbdebe;
-      width: 70%;
+      border-bottom: 1px solid #414042;
+      width: 50%;
+      clear: both;
       text-align: right;
       float: right;
       /*
@@ -739,7 +742,7 @@ NAVIGATION STYLES
 			http://www.alistapart.com/articles/organizing-mobile/
 			*/ }
       .header-nav .nav li:first-child {
-        border-top: 1px solid #fbdebe; }
+        border-top: 1px solid #414042; }
       .header-nav .nav li a {
         display: inline-block;
         color: #414042;
@@ -755,7 +758,7 @@ NAVIGATION STYLES
 				keep this file as small as possible!
 				*/ }
         .header-nav .nav li a:hover, .header-nav .nav li a:focus {
-          color: #fbdebe; }
+          color: #f4b184; }
 
 /******************************************************************
 PAGE NAVI STYLES
@@ -819,8 +822,8 @@ FOOTER STYLES
   margin: 50px 0;
   padding: 50px;
   box-sizing: border-box;
-  border-top: 1px solid #fbdebe;
-  border-bottom: 1px solid #fbdebe;
+  border-top: 1px solid #f4b184;
+  border-bottom: 1px solid #f4b184;
   display: flex; }
   .footer .left-foot {
     width: 33.3333333333%;
@@ -835,7 +838,7 @@ FOOTER STYLES
       text-align: left; }
 
 .slider-wrap {
-  margin-bottom: 60px;
+  margin-bottom: 0;
   position: relative; }
   .slider-wrap .slide {
     width: 100%;
@@ -843,7 +846,9 @@ FOOTER STYLES
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    position: relative; }
+    position: relative;
+    border: 1px solid #414042;
+    border-bottom: none; }
     .slider-wrap .slide .caption {
       position: absolute;
       top: 505px;
@@ -861,26 +866,26 @@ FOOTER STYLES
     float: left;
     height: 400px;
     color: #414042;
-    background-color: #fbdebe;
-    padding: 200px 50px 25px 50px;
-    box-sizing: border-box;
-    position: relative; }
-    .home-news-item:first-child .home-news-item-text .white-ribbon {
-      position: absolute;
-      background-color: #fff3e4;
-      width: 160px;
-      line-height: 50px;
-      display: block;
-      top: 75px;
-      left: -80px;
-      text-align: center; }
+    background-color: #fff3e4;
+    border: 1px solid #414042;
+    border-left: none;
+    border-bottom: none;
+    padding: 125px 100px 100px 50px;
+    position: relative;
+    transition: all 0.5s ease-in-out; }
+    .home-news-item:first-child .home-news-item-text:hover {
+      background-color: #f4b184; }
   .home-news-item:first-child .squarephoto {
     width: 33.3333333333%;
     float: left;
     height: 400px;
     background-size: cover;
     background-position: center center;
-    background-repeat: no-repeat; }
+    background-repeat: no-repeat;
+    transition: all 0.5s ease-in-out;
+    border: 1px solid #414042;
+    border-right: none;
+    border-bottom: none; }
   .home-news-item:first-child .block-link {
     width: 33.3333333333%;
     float: right;
@@ -892,31 +897,45 @@ FOOTER STYLES
     text-align: center;
     display: flex;
     align-items: center;
+    background-color: #fff;
+    border-right: 1px solid #414042;
+    border-top: 1px solid #414042;
     justify-content: center; }
+    .home-news-item:first-child .block-link .block-link-interior {
+      width: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 1s ease-in-out;
+      font-style: italic; }
+      .home-news-item:first-child .block-link .block-link-interior:hover a {
+        color: #f4b184; }
+      .home-news-item:first-child .block-link .block-link-interior a {
+        color: #414042;
+        padding: 15px 0;
+        width: 200px;
+        display: block;
+        text-decoration: none; }
 
 .home-news-item:nth-child(2) {
   width: 100%;
   float: left;
   margin-left: 0;
   margin-right: 0;
-  display: block; }
+  display: block;
+  border: 1px solid #414042; }
   .home-news-item:nth-child(2) .home-news-item-text {
     width: 33.3333333333%;
     float: left;
     height: 400px;
     color: #414042;
-    padding: 150px 50px 25px 50px;
+    padding: 125px 100px 100px 50px;
     box-sizing: border-box;
     position: relative;
     background-color: #fff;
     transition: background-color 0.5s ease-in-out; }
     .home-news-item:nth-child(2) .home-news-item-text .white-ribbon {
-      position: relative;
-      background-color: none;
-      width: auto;
-      padding: 15px 0;
-      display: block;
-      text-align: left; }
+      display: none; }
   .home-news-item:nth-child(2):hover .home-news-item-text {
     background-color: #fce9d6; }
   .home-news-item:nth-child(2) .squarephoto {
@@ -926,6 +945,18 @@ FOOTER STYLES
     height: 400px;
     background-size: cover;
     background-position: center center;
-    background-repeat: no-repeat; }
+    background-repeat: no-repeat;
+    transition: all 0.5s ease-in-out; }
   .home-news-item:nth-child(2) .block-link {
     display: none; }
+
+.article-header {
+  text-align: center; }
+
+.one-txt {
+  text-align: center;
+  padding: 0px 150px;
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0; }

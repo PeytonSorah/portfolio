@@ -1,0 +1,9 @@
+.article-header{
+  text-align:center;
+}
+
+.one-txt{
+  text-align: center;
+  padding: 0px 150px;
+  @include span(full);
+}
