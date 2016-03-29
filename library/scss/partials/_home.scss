@@ -7,7 +7,7 @@
       height: 400px;
       color: $black;
       background-color: $pink;
-      padding: 200px $full-space $half-space $half-space;
+      padding: 200px $full-space $half-space $full-space;
       box-sizing: border-box;
       position: relative;
       .white-ribbon{
@@ -17,15 +17,23 @@
         padding: 15px 0;
         display: block;
         top: 50px;
-        left: -105px;
+        left: -75px;
         text-align: center;
       }
     }
     .squarephoto{
       @include span(first 4 of 12);
       height: 400px;
-      background-image: contain;
+      background-size: cover;
       background-position: center center;
+      background-repeat: no-repeat;
+    }
+    .squarephoto-featured{
+      @include span(last 4 of 12);
+      height: 400px;
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
     }
   }
   &:nth-child(2){
@@ -35,7 +43,7 @@
       @include span(first 4 of 12);
       height: 400px;
       color: $black;
-      padding: 200px $full-space $half-space $half-space;
+      padding: 200px $full-space $half-space $full-space;
       box-sizing: border-box;
       position: relative;
       background-color: $white;
@@ -46,15 +54,19 @@
         padding: 15px 0;
         display: block;
         top: 50px;
-        right: -105px;
+        right: -75px;
         text-align: center;
       }
     }
     .squarephoto{
       @include span(last 8 of 12);
       height: 400px;
-      background-image: contain;
+      background-size: cover;
       background-position: center center;
+      background-repeat: no-repeat;
+    }
+    .squarephoto-featured{
+      display:none;
     }
   }
 }

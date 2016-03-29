@@ -60,13 +60,14 @@
 
 						        <div class="home-news-item">
 						          <a href="<?php the_permalink() ?>">
-							          <div class="squarephoto" style="background: url(<?php echo $src[0]; ?> ) !important;"></div>			            
+							          <div class="squarephoto" style="background-image: url(<?php echo $src[0]; ?>)"></div>			            
 							          <section class="home-news-item-text">
-						          		<h2 class="white-ribbon"><?php the_date('m / d'); ?> </h2>
+						          		<h2 class="white-ribbon"><?php echo get_the_date('m / d'); ?> </h2>
 							            <h3><?php echo get_the_title(); ?></h3>
 							            <p><?php the_excerpt(); ?></p>
 							          </section>
 						          </a>
+						           <div class="squarephoto-featured" style="background-image: url(http://i2.cdn.turner.com/cnnnext/dam/assets/150324154010-04-internet-cats-restricted-super-169.jpg);"></div>
 						        </div>
 
 						        <?php endwhile; ?>
