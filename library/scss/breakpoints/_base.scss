@@ -84,13 +84,19 @@ h1, .h1 {
 }
 
 h2, .h2 {
-	font-size: 1.2em;
-	line-height: 1.4em;
-	margin-bottom: 0.375em;
+	font-size: 1em;
+  font-family: $sans-serif;
+  letter-spacing: 3px;
+  font-weight: 700;
+
 }
 
 h3, .h3 {
-	font-size: 1.1em;
+	font-size: 0.9em;
+  font-family: $sans-serif;
+  font-weight: 100;
+  letter-spacing: 3px;
+  text-transform: uppercase;
 }
 
 h4, .h4 {
@@ -114,10 +120,10 @@ HEADER STYLES
 	@include span(full);
   @include clearfix;
 	margin: 50px 0;
-	padding: 50px;
+	padding: 50px 50px 0;
   box-sizing: border-box;
 	border-top: 1px solid $pink;
-	border-bottom: 1px solid $pink;
+	// border-bottom: 1px solid $pink;
   display: flex;
   clear: both;
 }
@@ -146,12 +152,10 @@ NAVIGATION STYLES
 *********************/
 .header-nav{
   @include span(last 3 of 12);
-  padding-left:25px;
   margin: 0;
   padding: 0;
 	.nav {
     list-style: none;
-    text-align: right;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -159,6 +163,9 @@ NAVIGATION STYLES
 
 		li {
       border-bottom: 1px solid $pink;
+      width: 70%;
+      text-align: right;
+      float: right;
 
 			&:first-child {
 			  border-top: 1px solid $pink;
@@ -167,8 +174,9 @@ NAVIGATION STYLES
 				display: inline-block;
 				color: $black;
 				text-decoration: none;
-				padding: 0.75em;
+				padding: 0.45em;
         width: 100%;
+        font-style: italic;
 
 				/*
 				remember this is for mobile ONLY, so there's no need

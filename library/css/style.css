@@ -533,13 +533,6 @@ p {
   .clearfix:after, .cf:after {
     clear: both; }
 
-.slider-wrap .slide {
-  width: 100%;
-  height: 500px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center; }
-
 /*********************
 GENERAL STYLES
 *********************/
@@ -621,12 +614,17 @@ h1, .h1 {
   font-weight: 700; }
 
 h2, .h2 {
-  font-size: 1.2em;
-  line-height: 1.4em;
-  margin-bottom: 0.375em; }
+  font-size: 1em;
+  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+  letter-spacing: 3px;
+  font-weight: 700; }
 
 h3, .h3 {
-  font-size: 1.1em; }
+  font-size: 0.9em;
+  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+  font-weight: 100;
+  letter-spacing: 3px;
+  text-transform: uppercase; }
 
 h4, .h4 {
   font-size: 1.1em;
@@ -648,10 +646,9 @@ HEADER STYLES
   margin-right: 0;
   zoom: 1;
   margin: 50px 0;
-  padding: 50px;
+  padding: 50px 50px 0;
   box-sizing: border-box;
   border-top: 1px solid #fbdebe;
-  border-bottom: 1px solid #fbdebe;
   display: flex;
   clear: both; }
   #inner-header:before, #inner-header:after {
@@ -661,17 +658,15 @@ HEADER STYLES
     clear: both; }
 
 .social {
-  width: 22.4137931034%;
+  width: 25%;
   float: left;
-  margin-right: 3.4482758621%;
   position: relative; }
   .social i {
     margin: 0 5px 0 0; }
 
 .logo {
-  width: 48.275862069%;
+  width: 50%;
   float: left;
-  margin-right: 3.4482758621%;
   position: relative;
   text-align: center;
   align-self: center; }
@@ -684,16 +679,14 @@ HEADER STYLES
 NAVIGATION STYLES
 *********************/
 .header-nav {
-  width: 22.4137931034%;
+  width: 25%;
   float: right;
   margin-right: 0;
-  padding-left: 25px;
   margin: 0;
   padding: 0;
   /* end .nav */ }
   .header-nav .nav {
     list-style: none;
-    text-align: right;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -703,6 +696,9 @@ NAVIGATION STYLES
     /* end current highlighters */ }
     .header-nav .nav li {
       border-bottom: 1px solid #fbdebe;
+      width: 70%;
+      text-align: right;
+      float: right;
       /*
 			so you really have to rethink your dropdowns for mobile.
 			you don't want to have it expand too much because the
@@ -716,8 +712,9 @@ NAVIGATION STYLES
         display: inline-block;
         color: #414042;
         text-decoration: none;
-        padding: 0.75em;
+        padding: 0.45em;
         width: 100%;
+        font-style: italic;
         /*
 				remember this is for mobile ONLY, so there's no need
 				to even declare hover styles here, you can do it in
@@ -793,9 +790,8 @@ FOOTER STYLES
   border-bottom: 1px solid #fbdebe;
   display: flex; }
   .footer .left-foot {
-    width: 31.0344827586%;
-    float: left;
-    margin-right: 3.4482758621%; }
+    width: 33.3333333333%;
+    float: left; }
     .footer .left-foot .copyright {
       width: 100%;
       font-style: italic;
@@ -804,3 +800,82 @@ FOOTER STYLES
     .footer .left-foot p {
       width: 100%;
       text-align: left; }
+
+.slider-wrap {
+  margin-bottom: 50px;
+  position: relative; }
+  .slider-wrap .slide {
+    width: 100%;
+    height: 500px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    position: relative; }
+    .slider-wrap .slide .caption {
+      position: absolute;
+      top: 505px;
+      right: 25px;
+      text-align: right; }
+
+.home-news-item:first-child {
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
+  display: block; }
+  .home-news-item:first-child .home-news-item-text {
+    width: 33.3333333333%;
+    float: left;
+    height: 400px;
+    color: #414042;
+    background-color: #fbdebe;
+    padding: 200px 50px 25px 25px;
+    box-sizing: border-box;
+    position: relative; }
+    .home-news-item:first-child .home-news-item-text .white-ribbon {
+      position: absolute;
+      background-color: #fff;
+      width: 160px;
+      padding: 15px 0;
+      display: block;
+      top: 50px;
+      left: -105px;
+      text-align: center; }
+  .home-news-item:first-child .squarephoto {
+    width: 33.3333333333%;
+    float: left;
+    height: 400px;
+    background-image: contain;
+    background-position: center center; }
+
+.home-news-item:nth-child(2) {
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
+  display: block; }
+  .home-news-item:nth-child(2) .home-news-item-text {
+    width: 33.3333333333%;
+    float: left;
+    height: 400px;
+    color: #414042;
+    padding: 200px 50px 25px 25px;
+    box-sizing: border-box;
+    position: relative;
+    background-color: #fff; }
+    .home-news-item:nth-child(2) .home-news-item-text .white-ribbon {
+      position: absolute;
+      background-color: #fbdebe;
+      width: 160px;
+      padding: 15px 0;
+      display: block;
+      top: 50px;
+      right: -105px;
+      text-align: center; }
+  .home-news-item:nth-child(2) .squarephoto {
+    width: 66.6666666667%;
+    float: right;
+    margin-right: 0;
+    height: 400px;
+    background-image: contain;
+    background-position: center center; }
