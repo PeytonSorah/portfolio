@@ -10,10 +10,6 @@
 
 						    <article>
 
-						      <header class="article-header entry-header">
-						        <h2 class="page-title"><?php the_title(); ?></h2>
-						      </header>
-
 						      <section class="entry-content">
 						        <?php
 						        if ( have_rows( 'flex' ) ) :

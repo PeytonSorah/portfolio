@@ -22,6 +22,7 @@
 						<main id="main" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 
 								<section class="entry-content cf" itemprop="articleBody">
+									
 									   <?php
 											  if ( have_rows( 'slider' ) ) : ?>
 
@@ -43,47 +44,49 @@
 
 								</section>
 
-								<section class="home-news">
+								<div class="gallery">
 
-						      <div class="home-news-wrap">
-						        <?php 
-						          $args = array(
-						          'numberposts' => 2,
-						          'posts_per_page' => 2,
-						          'orderby' => 'post_date',
-						          'order' => 'DESC',
-						          'post_type' => 'portfolio',
-						          );
-						          $the_query = new WP_Query( $args );
-						          if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-						          <?php $src = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), array( 5600,1000 ), false, '' ); ?>
+								<?php 
+				          $args = array(
+				          'numberposts' => 6,
+				          'posts_per_page' => 6,
+				          'orderby' => 'post_date',
+				          'order' => 'DESC',
+				          'post_type' => 'portfolio',
+				          );
+				          $the_query = new WP_Query( $args );
+				          if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+				          <?php $src = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), array( 5600,1000 ), false, '' ); ?>
 
-						        <div class="home-news-item">
-						          <a href="<?php the_permalink() ?>">
-							          <div class="squarephoto" style="background-image: url(<?php echo $src[0]; ?>)"></div>			            
-							          <section class="home-news-item-text">
-							          	<!-- <h2 class="white-ribbon">Latest Work</h2> -->
-						          		<h3 class="date"><?php echo get_the_date('m / d'); ?></h3>
-							            <h2><?php echo get_the_title(); ?></h2>
-							            <p><?php the_excerpt(); ?></p>
-							          </section>
-						          </a>
-						           <div class="block-link" style="background-image: url( )" >
-						           	<div class="block-link-interior">
-													 <a href="<?php echo esc_url( home_url() ); ?>/work">
-										        	view<br>full portfolio
-										       </a>
-										     </div>
-						           </div>
-						        </div>
 
-						        <?php endwhile; ?>
-						        <?php else : ?>
-						        <?php get_template_part( 'library/post-not-found' ); ?>
-						        <?php endif; ?>
+									<div class="image-link">
+					          <a href="<?php the_permalink() ?>">
+						          <div class="square-image" style="background-image: url(<?php echo $src[0]; ?>)"></div>			            
+					          </a>
+					        </div>
 
-						    </div>
-						  </section>
+								<?php endwhile; ?>
+											        
+					      </div>
+
+
+								<?php bones_page_navi(); ?>
+
+								<?php else : ?>
+
+										<article id="post-not-found" class="hentry cf">
+											<header class="article-header">
+												<h1><?php _e( 'Oops, Post Not Found!', 'bonestheme' ); ?></h1>
+											</header>
+											<section class="entry-content">
+												<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'bonestheme' ); ?></p>
+											</section>
+											<footer class="article-footer">
+													<p><?php _e( 'This is the error message in the custom posty type archive template.', 'bonestheme' ); ?></p>
+											</footer>
+										</article>
+
+								<?php endif; ?>
 
 						</main>
 
@@ -94,3 +97,6 @@
 
 
 <?php get_footer(); ?>
+
+
+

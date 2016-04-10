@@ -12,7 +12,7 @@ body {
 	font-size: 16px;
 	line-height: 1.5;
 	color: $text-color;
-	background-color: $cream;
+	background-color: $white;
   	-webkit-font-smoothing: antialiased;
   	-moz-osx-font-smoothing: grayscale;
   @include container($wrapper-width);
@@ -124,13 +124,13 @@ HEADER STYLES
 	@include span(full);
   @include clearfix;
 	margin: 50px 0;
-	padding: 50px 0 0;
+	padding: 50px;
   box-sizing: border-box;
 	border-top: 1px solid $black;
-  
 	// border-bottom: 1px solid $black;
   display: flex;
   clear: both;
+  border-bottom: 1px solid $black;
 }
 
 	.social-nav{
@@ -147,7 +147,7 @@ HEADER STYLES
 
       li {
         border-bottom: 1px solid $black;
-        width: 50%;
+        width: 80%;
         clear:both;
         text-align: left;
         float: left;
@@ -159,7 +159,7 @@ HEADER STYLES
           display: inline-block;
           color: $black;
           text-decoration: none;
-          padding: 0.45em;
+          padding: 0.45em 0;
           width: 100%;
           font-style: italic;
           transition: color 0.5s ease-in-out;
@@ -196,6 +196,7 @@ NAVIGATION STYLES
   @include span(last 3 of 12);
   margin: 0;
   padding: 0;
+
 	.nav {
     list-style: none;
     margin: 0;
@@ -205,7 +206,7 @@ NAVIGATION STYLES
 
 		li {
       border-bottom: 1px solid $black;
-      width: 50%;
+      width: 80%;
       clear:both;
       text-align: right;
       float: right;
@@ -217,7 +218,7 @@ NAVIGATION STYLES
 				display: inline-block;
 				color: $black;
 				text-decoration: none;
-				padding: 0.45em;
+				padding: 0.45em 0;
         width: 100%;
         font-style: italic;
         transition: color 0.5s ease-in-out;
@@ -364,11 +365,11 @@ FOOTER STYLES
 .footer {
 	clear: both;
 	color: $black;
-  margin: 50px 0;
+  margin: 50px 0 50px;
   padding: 50px;
   box-sizing: border-box;
-  border-top: 1px solid $pink;
-  border-bottom: 1px solid $pink;
+  border-bottom: 1px solid $black;
+  border-top: 1px solid $black;
   display: flex;
   .left-foot{
     @include span (first 4 of 12);

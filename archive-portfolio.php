@@ -18,36 +18,29 @@
 
 				<div id="inner-content" class="wrap cf">
 
-					<main id="main" class="m-all t-2of3 d-5of7 cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+					<main id="main" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 
-						<h1 class="archive-title h2"><?php post_type_archive_title(); ?></h1>
+							<div class="gallery">
 
 							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+							<?php $src = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), array( 5600,1000 ), false, '' ); ?>
 
-							<article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article">
-
-								<header class="article-header">
-
-									<h3 class="h2"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
-									<p class="byline vcard"><?php
-										printf( __( 'Posted <time class="updated" datetime="%1$s" itemprop="datePublished">%2$s</time> by <span class="author">%3$s</span>', 'bonestheme' ), get_the_time( 'Y-m-j' ), get_the_time( __( 'F jS, Y', 'bonestheme' ) ), get_author_posts_url( get_the_author_meta( 'ID' ) ));
-									?></p>
-
-								</header>
-
-								<section class="entry-content cf">
-
-									<?php the_excerpt(); ?>
-
-								</section>
-
-								<footer class="article-footer">
-
-								</footer>
-
-							</article>
+								<div class="image-link">
+				          <a href="<?php the_permalink() ?>">
+					          <div class="square-image" style="background-image: url(<?php echo $src[0]; ?>)"></div>			            
+					          <section class="link-text">
+					          	<!-- <h2 class="white-ribbon">Latest Work</h2> -->
+				          		<h3 class="date"><?php echo get_the_date('m / d'); ?></h3>
+					            <h2><?php echo get_the_title(); ?></h2>
+					            <p><?php the_excerpt(); ?></p>
+					          </section>
+				          </a>
+				        </div>
 
 							<?php endwhile; ?>
+										        
+				      </div>
+
 
 									<?php bones_page_navi(); ?>
 
@@ -68,8 +61,6 @@
 							<?php endif; ?>
 
 						</main>
-
-					<?php get_sidebar(); ?>
 
 				</div>
 

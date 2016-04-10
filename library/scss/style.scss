@@ -57,13 +57,15 @@ $susy: (
 
 $wrapper-width: 1200px;
 
+
 @import "breakpoints/base";
 
 @import "partials/slider";
 
-@import "partials/home";
 
 @import "partials/flex";
+
+@import "partials/archive";
 
 
 
