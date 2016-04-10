@@ -1,49 +1,46 @@
+<?php
+/*
+ * Blog ARCHIVE TEMPLATE
+ *
+ * This is the custom post type archive template. If you edit the custom post type name,
+ * you've got to change the name of this template to reflect that name change.
+ *
+ * For Example, if your custom post type is called "register_post_type( 'bookmarks')",
+ * then your template name should be archive-bookmarks.php
+ *
+ * For more info: http://codex.wordpress.org/Post_Type_Templates
+*/
+?>
+
 <?php get_header(); ?>
 
 			<div id="content">
 
 				<div id="inner-content" class="wrap cf">
 
-						<main id="main" class="m-all t-2of3 d-5of7 cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+					<main id="main" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 
-							<?php
-							the_archive_title( '<h1 class="page-title">', '</h1>' );
-							the_archive_description( '<div class="taxonomy-description">', '</div>' );
-							?>
-							
+							<div class="gallery">
+
 							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+							<?php $src = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), array( 5600,1000 ), false, '' ); ?>
 
-							<article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article">
-
-								<header class="entry-header article-header">
-
-									<h3 class="h2 entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
-									<p class="byline entry-meta vcard">
-										<?php printf( __( 'Posted', 'bonestheme' ).' %1$s %2$s',
-                  							     /* the time the post was published */
-                  							     '<time class="updated entry-time" datetime="' . get_the_time('Y-m-d') . '" itemprop="datePublished">' . get_the_time(get_option('date_format')) . '</time>',
-                       								/* the author of the post */
-                       								'<span class="by">'.__('by', 'bonestheme').'</span> <span class="entry-author author" itemprop="author" itemscope itemptype="http://schema.org/Person">' . get_the_author_link( get_the_author_meta( 'ID' ) ) . '</span>'
-                    							); ?>
-									</p>
-
-								</header>
-
-								<section class="entry-content cf">
-
-									<?php the_post_thumbnail( 'bones-thumb-300' ); ?>
-
-									<?php the_excerpt(); ?>
-
-								</section>
-
-								<footer class="article-footer">
-
-								</footer>
-
-							</article>
+								<div class="image-link">
+				          <a href="<?php the_permalink() ?>">
+					          <div class="square-image" style="background-image: url(<?php echo $src[0]; ?>)"></div>			            
+					          <section class="link-text">
+					          	<!-- <h2 class="white-ribbon">Latest Work</h2> -->
+				          		<h3 class="date"><?php echo get_the_date('m / d'); ?></h3>
+					            <h2><?php echo get_the_title(); ?></h2>
+					            <p><?php the_excerpt(); ?></p>
+					          </section>
+				          </a>
+				        </div>
 
 							<?php endwhile; ?>
+										        
+				      </div>
+
 
 									<?php bones_page_navi(); ?>
 
@@ -57,15 +54,13 @@
 											<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'bonestheme' ); ?></p>
 										</section>
 										<footer class="article-footer">
-												<p><?php _e( 'This is the error message in the archive.php template.', 'bonestheme' ); ?></p>
+												<p><?php _e( 'This is the error message in the custom posty type archive template.', 'bonestheme' ); ?></p>
 										</footer>
 									</article>
 
 							<?php endif; ?>
 
 						</main>
-
-					<?php get_sidebar(); ?>
 
 				</div>
 

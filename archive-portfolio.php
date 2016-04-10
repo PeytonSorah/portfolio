@@ -28,17 +28,11 @@
 								<div class="image-link">
 				          <a href="<?php the_permalink() ?>">
 					          <div class="square-image" style="background-image: url(<?php echo $src[0]; ?>)"></div>			            
-					          <section class="link-text">
-					          	<!-- <h2 class="white-ribbon">Latest Work</h2> -->
-				          		<h3 class="date"><?php echo get_the_date('m / d'); ?></h3>
-					            <h2><?php echo get_the_title(); ?></h2>
-					            <p><?php the_excerpt(); ?></p>
-					          </section>
 				          </a>
 				        </div>
 
 							<?php endwhile; ?>
-										        
+
 				      </div>
 
 
